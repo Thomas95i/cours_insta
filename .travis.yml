@@ -5,9 +5,18 @@ language: python
 python:
   - '3.6'
 
-script:
-  # - sudo docker-compose up -d
-  - sudo apt-get update && sudo apt-get install python-pip python3-pip
-  - sudo pip install pipenv
-  - sudo pipenv install
-  - sudo pipenv run pytest
+code_test:
+  script:
+    - sudo apt-get update && sudo apt-get install python3-pip
+    - sudo pip3 install pipenv
+    - sudo pipenv install
+    - sudo pipenv run pytest tests/test_conn.py
+
+build:
+  script:
+    - sudo docker build -t hello_world:latest .
+
+docker_test:
+  script:
+    - sudo docker run -p 5000:5000 hello_world:latest
+    - sudo pipenv run pytest tests/test_docker.py
