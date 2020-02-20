@@ -5,12 +5,11 @@ language: python
 python:
   - '3.6'
 
-code_test:
-  script:
-    - sudo apt-get update && sudo apt-get install python3-pip
-    - sudo pip3 install pipenv
-    - sudo pipenv install
-    - sudo pipenv run pytest tests/test_conn.py
+script:
+  - sudo apt-get update && sudo apt-get install python3-pip
+  - sudo pip3 install pipenv
+  - sudo pipenv install
+  - sudo pipenv run pytest tests/test_conn.py
 
 build:
   script:
