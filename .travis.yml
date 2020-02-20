@@ -1,5 +1,8 @@
 ---
 
+services:
+  - docker
+
 language: python
 
 python:
