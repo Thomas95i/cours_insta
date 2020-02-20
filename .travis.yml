@@ -17,7 +17,5 @@ script:
 build:
   script:
     - sudo docker build -t hello_world:latest .
-
-script:
-  - sudo docker run -p 5000:5000 hello_world:latest
-  - sudo pipenv run pytest tests/test_docker.py
+    - sudo docker run -p 5000:5000 hello_world:latest
+    - sudo pipenv run pytest tests/test_docker.py
