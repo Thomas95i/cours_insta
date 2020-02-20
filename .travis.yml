@@ -7,7 +7,7 @@ python:
 
 script:
   - sudo apt-get update && sudo apt-get install python3-pip
-  - sudo pip3 install pipenv
+  - sudo pip install pipenv
   - sudo pipenv install
   - sudo pipenv run pytest tests/test_conn.py
 
