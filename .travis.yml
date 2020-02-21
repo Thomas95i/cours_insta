@@ -18,5 +18,6 @@ script:
   - sudo docker build -t hello_world:latest .
   - sudo docker run -p 5000:5000 -d hello_world:latest
   - sudo pipenv run pytest tests/test_docker.py
+  - echo "$DOCKER_PASSWORD" | sudo docker login -u "$DOCKER_USERNAME" --password-stdin
   - sudo docker tag hello_world:latest thomasbar/hello_world:latest
   - sudo docker push thomasbar/hello_world:latest
