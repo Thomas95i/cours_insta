@@ -8,14 +8,13 @@ language: python
 python:
   - '3.6'
 
-script:
+install:
   - sudo apt-get update && sudo apt-get install python3-pip
   - sudo pip install pipenv
   - sudo pipenv install
-  - sudo pipenv run pytest tests/test_conn.py
 
-build:
-  script:
-    - sudo docker build -t hello_world:latest .
-    - sudo docker run -p 5000:5000 hello_world:latest
-    - sudo pipenv run pytest tests/test_docker.py
+script:
+  - sudo pipenv run pytest tests/test_conn.py
+  - sudo docker build -t hello_world:latest .
+  - sudo docker run -p 5000:5000 hello_world:latest
+  - sudo pipenv run pytest tests/test_docker.py
