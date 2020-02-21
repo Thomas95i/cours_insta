@@ -22,8 +22,8 @@ script:
   - sudo docker tag hello_world:latest thomasbar/hello_world:latest
   - sudo docker push thomasbar/hello_world:latest
 
-deploy:
-  provider: script
-  script: ./deliver.sh
-  on branch:
-    - master
+# deploy:
+#   provider: script
+#   script: ./deliver.sh
+#   on branch:
+#     - master
