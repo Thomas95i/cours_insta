@@ -16,5 +16,5 @@ install:
 script:
   - sudo pipenv run pytest tests/test_conn.py
   - sudo docker build -t hello_world:latest .
-  - sudo docker run -p 5000:5000 hello_world:latest
+  - sudo docker run -p 5000:5000 -d hello_world:latest
   - sudo pipenv run pytest tests/test_docker.py
